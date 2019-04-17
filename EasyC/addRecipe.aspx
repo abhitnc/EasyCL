@@ -13,6 +13,7 @@
         <br />
         Ingridient:-
         <asp:TextBox TextMode="MultiLine" runat="server" ID="Ingre"></asp:TextBox>
+        <br />
         Category:-
         <asp:DropDownList ID="DropDownList1" runat="server">
             <asp:ListItem Selected="True" >--Veg--</asp:ListItem>

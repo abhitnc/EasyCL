@@ -206,7 +206,7 @@
                     color = "green";
                     break;
                 case 5:
-                    strength = "";
+                    strength = "Very Strong";
                     color = "darkgreen";
                     break;
             }

@@ -34,7 +34,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select RName,Ingre from Recipe", con);      
+            SqlCommand cmd = new SqlCommand("select RName,Ingre1 from Recipe", con);      
             
             cmd.ExecuteNonQuery();
             con.Close();

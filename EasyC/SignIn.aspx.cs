@@ -27,7 +27,7 @@ public partial class SignIn : System.Web.UI.Page
     protected void submit_Click(object sender, EventArgs e)
     {
         string strpassword = Encryptdata(pass.Text);
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection2"].ConnectionString);
         con.Open();
         SqlCommand cmd = new SqlCommand("select * from SignUp where User_Email =@username and User_Pass=@password", con);
         cmd.Parameters.AddWithValue("@username", email.Text);

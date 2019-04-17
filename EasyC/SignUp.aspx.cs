@@ -27,7 +27,7 @@ public partial class SignUp : System.Web.UI.Page
     protected void reg_Click1(object sender, EventArgs e)
     {
         string strpassword = Encryptdata(pass.Text);
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection2"].ConnectionString);
         con.Open();
         SqlCommand cmd = con.CreateCommand();
         cmd.CommandType = System.Data.CommandType.Text;
