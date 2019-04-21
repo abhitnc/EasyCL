@@ -73,6 +73,7 @@
                                             </div>
                                             <asp:TextBox ID="email" runat="server" TextMode="Email" placeholder="Email" CssClass="form-control"></asp:TextBox>
                                         </div>
+                                        <asp:RegularExpressionValidator Display="Dynamic" ID="RegularExpressionValidator1" runat="server" ErrorMessage="Wrong email address" ControlToValidate="email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Display="Dynamic" runat="server" ControlToValidate="email" ErrorMessage="Email Required"></asp:RequiredFieldValidator>
                                     </div>
                                     <div class="form-group">
@@ -82,6 +83,7 @@
                                             </div>
                                             <asp:TextBox ID="pass" runat="server" onkeyup="CheckPasswordStrength(this.value)" TextMode="Password" placeholder="Password" CssClass="form-control"></asp:TextBox>
                                         </div>
+                                        <asp:RegularExpressionValidator Display="Dynamic"  runat="server" ForeColor = "Red" ID="abc1" ValidationExpression="^(?=.*\d+)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%]{6,10}$" ErrorMessage="Bad password" ControlToValidate="pass"></asp:RegularExpressionValidator>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" Display="Dynamic" runat="server" ControlToValidate="pass" ErrorMessage="Password Required"></asp:RequiredFieldValidator>
                                     </div>
                                     <div class="text-muted font-italic">

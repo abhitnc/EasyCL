@@ -15,7 +15,6 @@ public partial class ForgetPassword : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
     }
     protected void SendEmail(object sender, EventArgs e)
     {
@@ -65,6 +64,4 @@ public partial class ForgetPassword : System.Web.UI.Page
             lblMessage.Text = "This email address does not match our records.";
         }
     }
-
-
 }

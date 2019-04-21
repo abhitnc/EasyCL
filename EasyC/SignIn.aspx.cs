@@ -13,7 +13,7 @@ public partial class SignIn : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Session["id"] = null;
     }
     private string Encryptdata(string password)
     {
@@ -37,6 +37,7 @@ public partial class SignIn : System.Web.UI.Page
         da.Fill(dt);
         if (dt.Rows.Count > 0)
         {
+            Session["id"] = email.Text;
             Response.Redirect("Home.aspx");
         }
         else
