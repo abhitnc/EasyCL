@@ -1,0 +1,15 @@
+CREATE procedure spUploadImage1
+@RName nvarchar(255),
+@TTK int,
+@Image varbinary(max),
+@Category nvarchar(50),
+@Ingre1 nvarchar(800),
+@NewId int output,
+@fname nvarchar(50)
+as
+Begin
+    Insert into Recipe
+    values ( @Image, @RName,@Ingre1,@Category,@TTK,@fname)
+
+    Select @NewId = SCOPE_IDENTITY()
+End
