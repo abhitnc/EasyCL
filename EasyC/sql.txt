@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[Recipe] (
+    [Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Image]    VARCHAR (MAX)  NULL,
+    [RName]    NVARCHAR (50)  NULL,
+    [Ingre1]   NVARCHAR (800) NULL,
+    [Category] NVARCHAR (50)  NULL,
+    [TTK]      INT            NULL,
+    [fname]    NVARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
