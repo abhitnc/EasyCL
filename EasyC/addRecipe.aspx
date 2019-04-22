@@ -33,11 +33,6 @@
         <asp:RequiredFieldValidator Display="Dynamic" InitialValue="--Veg--" ForeColor="Red" ID="RequiredFieldValidator4" runat="server" ErrorMessage="Select the Category" ControlToValidate="DropDownList1"></asp:RequiredFieldValidator>
         <br />
         <br />
-        Desciption:-
-        <asp:TextBox ID="TextBox7" runat="server" TextMode="MultiLine" min="0"></asp:TextBox>
-        <asp:RequiredFieldValidator runat="server" ID="DescVal" ControlToValidate="TextBox7" Display="Dynamic" ForeColor="Red" ErrorMessage="Enter Description"></asp:RequiredFieldValidator>
-        <br />
-        <br />
         
         Time to cook(In minutes):-
         <asp:TextBox ID="TextBox8" runat="server" TextMode="Number" Columns="10" Rows="5" min="0"></asp:TextBox>

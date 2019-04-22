@@ -69,12 +69,6 @@ public partial class addRecipe : System.Web.UI.Page
                     Value = FileUpload1.HasFile
                 };
                 cmd.Parameters.Add(paramImageData);
-                SqlParameter paramDetails = new SqlParameter()
-                {
-                    ParameterName = "@Desc",
-                    Value = TextBox7.Text
-                };
-                cmd.Parameters.Add(paramDetails);
                 SqlParameter paramCategory = new SqlParameter()
                 {
                     ParameterName = "@Category",
@@ -109,11 +103,6 @@ public partial class addRecipe : System.Web.UI.Page
             HyperLink1.Visible = false;
         }
         ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Item added successfully')</script>");
-
-
-
     }
-
-
 }
 
