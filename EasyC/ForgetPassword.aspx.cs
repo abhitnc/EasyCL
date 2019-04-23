@@ -23,7 +23,7 @@ public partial class ForgetPassword : System.Web.UI.Page
         string constr = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         using (SqlConnection con = new SqlConnection(constr))
         {
-            using (SqlCommand cmd = new SqlCommand("SELECT User_Email, [User_Pass] FROM SignUp WHERE User_Email = @Email"))
+            using (SqlCommand cmd = new SqlCommand("SELECT email, [password] FROM logintable WHERE email = @Email"))
             {
                 cmd.Parameters.AddWithValue("@Email", email.Text.Trim());
                 cmd.Connection = con;
@@ -32,8 +32,8 @@ public partial class ForgetPassword : System.Web.UI.Page
                 {
                     if (sdr.Read())
                     {
-                        username = sdr["User_Email"].ToString();
-                        password = sdr["User_Pass"].ToString();
+                        username = sdr["email"].ToString();
+                        password = sdr["password"].ToString();
                     }
                 }
                 con.Close();
