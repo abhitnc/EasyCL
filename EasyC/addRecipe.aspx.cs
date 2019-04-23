@@ -88,20 +88,15 @@ public partial class addRecipe : System.Web.UI.Page
                 cmd.ExecuteNonQuery();
                 con.Close();
 
-
-                HyperLink1.Visible = true;
-                HyperLink1.Text = "See Stock";
-                HyperLink1.NavigateUrl = "~/testShow.aspx?Id=" +
-                    cmd.Parameters["@NewId"].Value.ToString();
-            }
+                Response.Redirect("Home.aspx");
+              }
         }
         else
         {
             Label1.Visible = true;
             Label1.ForeColor = System.Drawing.Color.Red;
             Label1.Text = "Only images (.jpg, .png, .gif and .bmp) can be uploaded";
-            HyperLink1.Visible = false;
-        }
+            }
         ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Item added successfully')</script>");
     }
 }

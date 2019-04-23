@@ -53,6 +53,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
+                                            <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
                                             <asp:TextBox ID="ppass"  runat="server" TextMode="Password" placeholder="Previous Password" CssClass="form-control"></asp:TextBox>
                                         </div>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Display="Dynamic" runat="server" ControlToValidate="ppass" ErrorMessage="Password Required"></asp:RequiredFieldValidator>

@@ -23,17 +23,19 @@ public partial class SignUp : System.Web.UI.Page
         return strmsg;
     }
 
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
 
     protected void reg_Click1(object sender, EventArgs e)
     {
         string strpassword = Encryptdata(pass.Text);
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection2"].ConnectionString);
+        string abc = "0";
         con.Open();
-        SqlCommand cmd = con.CreateCommand();
-        cmd.CommandType = System.Data.CommandType.Text;
-        cmd.CommandText = "insert into SignUp(User_Name,User_Num,User_Email,User_Pass) values ('" + name.Text + "','" + number.Text + "','" + email.Text + "','" + strpassword + "')";
+        SqlCommand cmd = new SqlCommand("insert into SignUp(User_Name,User_Num,User_Email,User_Pass) values ('" + name.Text + "','" + number.Text + "','" + email.Text + "','" + pass.Text + "')", con);
+        SqlCommand cmd1 = new SqlCommand("insert into logintable(email,password,password_change_status) values('" + email.Text + "','" + pass.Text + "','" + abc + "')", con);
         cmd.ExecuteNonQuery();
+        cmd1.ExecuteNonQuery();
         con.Close();
         Response.Redirect("SignIn.aspx");
+
     }
 }

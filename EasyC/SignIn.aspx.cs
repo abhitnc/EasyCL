@@ -27,11 +27,11 @@ public partial class SignIn : System.Web.UI.Page
     protected void submit_Click(object sender, EventArgs e)
     {
         string strpassword = Encryptdata(pass.Text);
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection2"].ConnectionString);
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         con.Open();
-        SqlCommand cmd = new SqlCommand("select * from SignUp where User_Email =@username and User_Pass=@password", con);
+        SqlCommand cmd = new SqlCommand("select * from logintable where email =@username and password=@password", con);
         cmd.Parameters.AddWithValue("@username", email.Text);
-        cmd.Parameters.AddWithValue("@password", strpassword);
+        cmd.Parameters.AddWithValue("@password", pass.Text);
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         da.Fill(dt);

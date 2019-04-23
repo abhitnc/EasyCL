@@ -28,21 +28,20 @@ public partial class ChangePass : System.Web.UI.Page
     {
         string strpassword = Encryptdata(ppass.Text);
         string strpassword1 = Encryptdata(npass.Text);
-        string id = "abhitnc@gmail.com";
-        //string id = Convert.ToString(Session["id"]);
-       // Label1.Text = id;
+        string id = Convert.ToString(Session["id"]);
+        Label1.Text = id;
         SqlConnection con = new SqlConnection(constr);
         con.Open();
 
-        SqlCommand cmd = new SqlCommand("select * from SignUp where User_Email=@Id and User_Pass=@Password", con);
+        SqlCommand cmd = new SqlCommand("select * from logintable where email=@ID and password=@Password", con);
         cmd.Parameters.AddWithValue("@Id", id);
-        cmd.Parameters.AddWithValue("@Password", strpassword);
+        cmd.Parameters.AddWithValue("@Password", ppass.Text);
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         da.Fill(dt);
         if (dt.Rows.Count > 0)
         {
-            string sql1 = "Update SignUp set User_Pass='" + strpassword1.Trim() + "' where User_Email='" + id + "'";
+            string sql1 = "Update logintable set password='" + npass.Text.Trim() + "' where email='" + id + "'";
             SqlCommand cmd1 = new SqlCommand(sql1, con);
             cmd1.ExecuteNonQuery();
             con.Close();
